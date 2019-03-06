@@ -3,6 +3,7 @@ package com.appfirebase;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -10,6 +11,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.google.firebase.FirebaseApp;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 
 
 import java.util.Arrays;
@@ -37,8 +39,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNGestureHandlerPackage(),
             new RNFirebasePackage(),
-              new RNFirebaseAnalyticsPackage()
+            new RNFirebaseAuthPackage(),
+            new RNFirebaseAnalyticsPackage()
       );
     }
 
